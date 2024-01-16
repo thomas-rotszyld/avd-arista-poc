@@ -1,0 +1,78 @@
+objects: {}
+plugins:
+  become: {}
+  cache: {}
+  callback: {}
+  cliconf: {}
+  connection: {}
+  httpapi: {}
+  inventory: {}
+  lookup: {}
+  module:
+    batch_template:
+      description: Render Jinja2 template on multiple items and write result to individual
+        files.
+      name: batch_template
+      namespace: ''
+      version_added: 4.0.0
+    configlet_build_config:
+      description: Build arista.cvp.configlet configuration.
+      name: configlet_build_config
+      namespace: ''
+      version_added: 1.0.0
+    eos_designs_facts:
+      description: Set eos_designs facts
+      name: eos_designs_facts
+      namespace: ''
+      version_added: 3.5.0
+    eos_designs_structured_config:
+      description: Generate AVD EOS Designs structured configuration
+      name: eos_designs_structured_config
+      namespace: ''
+      version_added: 4.0.0
+    eos_validate_state_reports:
+      description: Generates validation reports for the eos_validate_state role
+      name: eos_validate_state_reports
+      namespace: ''
+      version_added: 4.5.0
+    eos_validate_state_runner:
+      description: Uses ANTA for eos_validate_state role
+      name: eos_validate_state_runner
+      namespace: ''
+      version_added: 4.4.0
+    inventory_to_container:
+      description: Transform information from inventory to arista.cvp collection
+      name: inventory_to_container
+      namespace: ''
+      version_added: 1.0.0
+    set_vars:
+      description: Set vars as ansible_facts.
+      name: set_vars
+      namespace: ''
+      version_added: 4.0.0
+    validate_and_template:
+      description: Validate input data according to Schema, render Jinja2 template
+        and write result to a file.
+      name: validate_and_template
+      namespace: ''
+      version_added: 3.8.0
+    verify_requirements:
+      description: Verify Python requirements when running AVD
+      name: verify_requirements
+      namespace: ''
+      version_added: 4.0.0
+    yaml_templates_to_facts:
+      description: Set facts from YAML via Jinja2 templates
+      name: yaml_templates_to_facts
+      namespace: ''
+      version_added: 1.0.0
+  netconf: {}
+  shell: {}
+  strategy: {}
+  vars:
+    global_vars:
+      description: Variable plugins to allow loading global_vars with less precedence
+        than group_vars or host_vars
+      name: global_vars
+      version_added: 4.0.0
+version: 4.5.0

@@ -14,7 +14,7 @@ all:
           ansible_network_os: eos
           ansible_httpapi_port: 443
     FABRIC:
-      vars:
+      vars: # Vars apply to all host of the troup
         ansible_user: arista
         ansible_password: arista6cua
         ansible_connection: httpapi

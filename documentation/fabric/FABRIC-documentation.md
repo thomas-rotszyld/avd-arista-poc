@@ -1,6 +1,6 @@
 # FABRIC
 
-# Table of Contents
+## Table of Contents
 
 - [Fabric Switches and Management IP](#fabric-switches-and-management-ip)
   - [Fabric Switches with inband Management IP](#fabric-switches-with-inband-management-ip)
@@ -13,37 +13,38 @@
   - [VTEP Loopback VXLAN Tunnel Source Interfaces (VTEPs Only)](#vtep-loopback-vxlan-tunnel-source-interfaces-vteps-only)
   - [VTEP Loopback Node allocation](#vtep-loopback-node-allocation)
 
-# Fabric Switches and Management IP
+## Fabric Switches and Management IP
 
-| POD | Type | Node | Management IP | Platform | Provisioned in CloudVision |
-| --- | ---- | ---- | ------------- | -------- | -------------------------- |
-| FABRIC | l3leaf | borderleaf1-DC1 | 192.168.0.25/24 | - | Provisioned |
-| FABRIC | l3leaf | borderleaf1-DC2 | 192.168.0.35/24 | - | Provisioned |
-| FABRIC | l3leaf | borderleaf2-DC1 | 192.168.0.26/24 | - | Provisioned |
-| FABRIC | l3leaf | borderleaf2-DC2 | 192.168.0.36/24 | - | Provisioned |
-| FABRIC | super-spine | DCI | 192.168.0.76/24 | - | Provisioned |
-| FABRIC | l3leaf | leaf1-DC1 | 192.168.0.21/24 | - | Provisioned |
-| FABRIC | l3leaf | leaf1-DC2 | 192.168.0.31/24 | - | Provisioned |
-| FABRIC | l3leaf | leaf2-DC1 | 192.168.0.22/24 | - | Provisioned |
-| FABRIC | l3leaf | leaf2-DC2 | 192.168.0.32/24 | - | Provisioned |
-| FABRIC | l3leaf | leaf3-DC1 | 192.168.0.23/24 | - | Provisioned |
-| FABRIC | l3leaf | leaf3-DC2 | 192.168.0.33/24 | - | Provisioned |
-| FABRIC | l3leaf | leaf4-DC1 | 192.168.0.24/24 | - | Provisioned |
-| FABRIC | l3leaf | leaf4-DC2 | 192.168.0.34/24 | - | Provisioned |
-| FABRIC | spine | spine1-DC1 | 192.168.0.11/24 | - | Provisioned |
-| FABRIC | spine | spine1-DC2 | 192.168.0.14/24 | - | Provisioned |
-| FABRIC | spine | spine2-DC1 | 192.168.0.12/24 | - | Provisioned |
-| FABRIC | spine | spine2-DC2 | 192.168.0.15/24 | - | Provisioned |
-| FABRIC | spine | spine3-DC1 | 192.168.0.13/24 | - | Provisioned |
-| FABRIC | spine | spine3-DC2 | 192.168.0.16/24 | - | Provisioned |
+| POD | Type | Node | Management IP | Platform | Provisioned in CloudVision | Serial Number |
+| --- | ---- | ---- | ------------- | -------- | -------------------------- | ------------- |
+| FABRIC | l3leaf | borderleaf1-DC1 | 192.168.0.25/24 | - | Provisioned | - |
+| FABRIC | l3leaf | borderleaf1-DC2 | 192.168.0.35/24 | - | Provisioned | - |
+| FABRIC | l3leaf | borderleaf2-DC1 | 192.168.0.26/24 | - | Provisioned | - |
+| FABRIC | l3leaf | borderleaf2-DC2 | 192.168.0.36/24 | - | Provisioned | - |
+| FABRIC | super-spine | DCI | 192.168.0.76/24 | - | Provisioned | - |
+| FABRIC | l3leaf | leaf1-DC1 | 192.168.0.21/24 | - | Provisioned | - |
+| FABRIC | l3leaf | leaf1-DC2 | 192.168.0.31/24 | - | Provisioned | - |
+| FABRIC | l3leaf | leaf2-DC1 | 192.168.0.22/24 | - | Provisioned | - |
+| FABRIC | l3leaf | leaf2-DC2 | 192.168.0.32/24 | - | Provisioned | - |
+| FABRIC | l3leaf | leaf3-DC1 | 192.168.0.23/24 | - | Provisioned | - |
+| FABRIC | l3leaf | leaf3-DC2 | 192.168.0.33/24 | - | Provisioned | - |
+| FABRIC | l3leaf | leaf4-DC1 | 192.168.0.24/24 | - | Provisioned | - |
+| FABRIC | l3leaf | leaf4-DC2 | 192.168.0.34/24 | - | Provisioned | - |
+| FABRIC | spine | spine1-DC1 | 192.168.0.11/24 | - | Provisioned | - |
+| FABRIC | spine | spine1-DC2 | 192.168.0.14/24 | - | Provisioned | - |
+| FABRIC | spine | spine2-DC1 | 192.168.0.12/24 | - | Provisioned | - |
+| FABRIC | spine | spine2-DC2 | 192.168.0.15/24 | - | Provisioned | - |
+| FABRIC | spine | spine3-DC1 | 192.168.0.13/24 | - | Provisioned | - |
+| FABRIC | spine | spine3-DC2 | 192.168.0.16/24 | - | Provisioned | - |
 
 > Provision status is based on Ansible inventory declaration and do not represent real status from CloudVision.
 
-## Fabric Switches with inband Management IP
+### Fabric Switches with inband Management IP
+
 | POD | Type | Node | Management IP | Inband Interface |
 | --- | ---- | ---- | ------------- | ---------------- |
 
-# Fabric Topology
+## Fabric Topology
 
 | Type | Node | Node Interface | Peer Type | Peer Node | Peer Interface |
 | ---- | ---- | -------------- | --------- | ----------| -------------- |
@@ -100,16 +101,16 @@
 | l3leaf | leaf4-DC2 | Ethernet4 | spine | spine2-DC2 | Ethernet5 |
 | l3leaf | leaf4-DC2 | Ethernet5 | spine | spine3-DC2 | Ethernet5 |
 
-# Fabric IP Allocation
+## Fabric IP Allocation
 
-## Fabric Point-To-Point Links
+### Fabric Point-To-Point Links
 
 | Uplink IPv4 Pool | Available Addresses | Assigned addresses | Assigned Address % |
 | ---------------- | ------------------- | ------------------ | ------------------ |
 | 192.168.103.0/24 | 256 | 36 | 14.07 % |
 | 192.168.203.0/24 | 256 | 36 | 14.07 % |
 
-## Point-To-Point Links Node Allocation
+### Point-To-Point Links Node Allocation
 
 | Node | Node Interface | Node IP Address | Peer Node | Peer Interface | Peer IP Address |
 | ---- | -------------- | --------------- | --------- | -------------- | --------------- |
@@ -154,7 +155,7 @@
 | leaf4-DC2 | Ethernet4 | 192.168.203.21/31 | spine2-DC2 | Ethernet5 | 192.168.203.20/31 |
 | leaf4-DC2 | Ethernet5 | 192.168.203.23/31 | spine3-DC2 | Ethernet5 | 192.168.203.22/31 |
 
-## Loopback Interfaces (BGP EVPN Peering)
+### Loopback Interfaces (BGP EVPN Peering)
 
 | Loopback Pool | Available Addresses | Assigned addresses | Assigned Address % |
 | ------------- | ------------------- | ------------------ | ------------------ |
@@ -162,7 +163,7 @@
 | 192.168.101.0/24 | 256 | 9 | 3.52 % |
 | 192.168.201.0/24 | 256 | 9 | 3.52 % |
 
-## Loopback0 Interfaces Node Allocation
+### Loopback0 Interfaces Node Allocation
 
 | POD | Node | Loopback0 |
 | --- | ---- | --------- |
@@ -186,14 +187,14 @@
 | FABRIC | spine3-DC1 | 192.168.101.13/32 |
 | FABRIC | spine3-DC2 | 192.168.201.13/32 |
 
-## VTEP Loopback VXLAN Tunnel Source Interfaces (VTEPs Only)
+### VTEP Loopback VXLAN Tunnel Source Interfaces (VTEPs Only)
 
 | VTEP Loopback Pool | Available Addresses | Assigned addresses | Assigned Address % |
 | --------------------- | ------------------- | ------------------ | ------------------ |
 | 192.168.102.0/24 | 256 | 6 | 2.35 % |
 | 192.168.202.0/24 | 256 | 6 | 2.35 % |
 
-## VTEP Loopback Node allocation
+### VTEP Loopback Node allocation
 
 | POD | Node | Loopback1 |
 | --- | ---- | --------- |

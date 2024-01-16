@@ -2,7 +2,8 @@
 spine:
   defaults:
     bgp_as: 65100
-    loopback_ipv4_pool: 192.168.101.0/24
+    loopback_ipv4_pool: 192.168.101.0/24 # Loopback 0
+    # Raw Commands.. to be added
     bgp_default:
       - 'no bgp default ipv4-unicast'
       - 'distance bgp 20 200 200'
@@ -10,6 +11,8 @@ spine:
     evpn_route_servers: [DCI]
   nodes:
     spine1-DC1:
+      # Every Node needs an unique ID
+      # ID combines with loopback0 pool to generate individual loopback0
       id: 11
       mgmt_ip: 192.168.0.11/24
     spine2-DC1:
@@ -25,28 +28,32 @@ spine:
 l3leaf:
   defaults:
     bgp_as: 65101-65190
+    # Same Pool as Spine... but not will have Different ID
+    # So no collision on loopback0
     loopback_ipv4_pool: 192.168.101.0/24
     vtep_loopback_ipv4_pool: 192.168.102.0/24
-    uplink_ipv4_pool: 192.168.103.0/24
+    uplink_ipv4_pool: 192.168.103.0/24 # P2P Connection
     uplink_interfaces: [Ethernet3, Ethernet4, Ethernet5]
     uplink_switches: [spine1-DC1, spine2-DC1, spine3-DC1]
     mlag: true
     mlag_interfaces: [Ethernet1, Ethernet2]
     mlag_peer_ipv4_pool: 192.168.90.0/24
-    mlag_peer_l3_ipv4_pool: 192.168.91.0/24
-    virtual_router_mac_address: 00:1C:73:00:00:99
+    mlag_peer_l3_ipv4_pool: 192.168.91.0/24 # EBGP Peering between mlag peers
+    virtual_router_mac_address: 00:1C:73:00:00:99 # Anycast GW
     bgp_defaults:
       - 'no bgp default ipv4-unicast'
       - 'distance bgp 20 200 200'
     spanning_tree_mode: mstp # Spanning Tree is still enabled even in EVPN setups
     spanning_tree_priority: 16384 
 
+  # Node Groups = MLAG Pairs
   node_groups:
     dc1_mlag1:
       nodes:
         leaf1-DC1:  
           id: 1
           mgmt_ip: 192.168.0.21/24
+          # Interfaces Located on Uplink Switches
           uplink_switch_interfaces: [Ethernet2, Ethernet2, Ethernet2]
         leaf2-DC1:
           id: 2
